@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>★ Portfolio ★ Stardew Valley Style</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>★ Portfolio ★ Stardew Valley Style</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-dark: #2d5a1b;
+    --green-mid: #4a8c2a;
+    --green-light: #7ec850;
+    --brown-dark: #3d1c02;
+    --brown-mid: #7a3f10;
+    --brown-light: #c4813a;
+    --cream: #f5e6c8;
+    --cream-dark: #e8d4a8;
+    --sky-blue: #87ceeb;
+    --sky-light: #c8e6f5;
+    --gold: #f7c948;
+    --gold-dark: #c4922a;
+    --red: #c0392b;
+    --purple: #8b5cf6;
+    --water: #4a9eff;
+    --pixel-border: 4px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #1a3a0a;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    color: var(--brown-dark);
+    overflow-x: hidden;
+    image-rendering: pixelated;
+  }
+
+  /* Pixel art border mixin */
+  .pixel-box {
+    background: var(--cream);
+    border: var(--pixel-border) solid var(--brown-dark);
+    box-shadow:
+      4px 0 0 0 var(--brown-dark),
+      -4px 0 0 0 var(--brown-dark),
+      0 4px 0 0 var(--brown-dark),
+      0 -4px 0 0 var(--brown-dark),
+      inset 2px 2px 0 var(--cream),
+      inset -2px -2px 0 var(--brown-mid),
+      8px 8px 0 rgba(0,0,0,0.4);
+    image-rendering: pixelated;
+  }
+
+  /* ========== HEADER / SKY ========== */
+  header {
+    position: relative;
+    background: linear-gradient(180deg, #4a7ec8 0%, #87ceeb 60%, #b8dff0 100%);
+    min-height: 400px;
+    overflow: hidden;
+    padding: 30px 20px 0;
+  }
+
+  /* Clouds */
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 0;
+    image-rendering: pixelated;
+    opacity: 0.9;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+  }
+  .cloud-1 { width: 64px; height: 24px; top: 40px; left: 10%; animation: cloudFloat 20s linear infinite; }
+  .cloud-1::before { width: 32px; height: 16px; top: -12px; left: 8px; }
+  .cloud-1::after { width: 16px; height: 8px; top: -6px; left: 32px; }
+  .cloud-2 { width: 96px; height: 32px; top: 80px; left: 55%; animation: cloudFloat 28s linear infinite; opacity: 0.7; }
+  .cloud-2::before { width: 48px; height: 24px; top: -16px; left: 16px; }
+  .cloud-3 { width: 48px; height: 16px; top: 30px; right: 15%; animation: cloudFloat 22s linear infinite reverse; }
+  .cloud-3::before { width: 24px; height: 12px; top: -8px; left: 8px; }
+
+  @keyframes cloudFloat {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Sun */
+  .sun {
+    position: absolute;
+    top: 20px;
+    right: 12%;
+    width: 56px;
+    height: 56px;
+    background: var(--gold);
+    box-shadow: 0 0 0 8px #f9e27a, 0 0 0 16px rgba(249,226,122,0.3);
+    animation: sunPulse 4s ease-in-out infinite;
+  }
+  @keyframes sunPulse {
+    0%, 100% { box-shadow: 0 0 0 8px #f9e27a, 0 0 0 16px rgba(249,226,122,0.3); }
+    50% { box-shadow: 0 0 0 12px #f9e27a, 0 0 0 24px rgba(249,226,122,0.5); }
+  }
+
+  /* Farmhouse sign */
+  .hero-sign {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign-post {
+    width: 16px;
+    height: 40px;
+    background: var(--brown-mid);
+    border: 3px solid var(--brown-dark);
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sign-board {
+    background: var(--brown-light);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 var(--brown-dark), inset 2px 2px 0 rgba(255,255,255,0.3), inset -2px -2px 0 rgba(0,0,0,0.2);
+    padding: 20px 36px;
+    text-align: center;
+    position: relative;
+  }
+  .sign-board::before {
+    content: '★';
+    position: absolute; left: 12px; top: 12px;
+    color: var(--gold);
+    font-size: 18px;
+  }
+  .sign-board::after {
+    content: '★';
+    position: absolute; right: 12px; top: 12px;
+    color: var(--gold);
+    font-size: 18px;
+  }
+
+  .sign-board h1 {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(14px, 3vw, 22px);
+    color: var(--cream);
+    text-shadow: 3px 3px 0 var(--brown-dark), -1px -1px 0 rgba(0,0,0,0.5);
+    line-height: 1.6;
+    letter-spacing: 2px;
+  }
+
+  .sign-board .subtitle {
+    font-family: 'VT323', monospace;
+    font-size: 26px;
+    color: var(--gold);
+    text-shadow: 2px 2px 0 var(--brown-dark);
+    margin-top: 8px;
+  }
+
+  /* Ground / Grass */
+  .ground {
+    position: relative;
+    background: var(--green-mid);
+    padding: 0;
+  }
+
+  .grass-top {
+    height: 32px;
+    background: var(--green-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Pixel grass tufts */
+  .grass-top::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 16px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 12px,
+      var(--green-light) 12px,
+      var(--green-light) 16px,
+      transparent 16px,
+      transparent 24px,
+      var(--green-light) 24px,
+      var(--green-light) 26px,
+      transparent 26px,
+      transparent 32px
+    );
+  }
+
+  /* Path */
+  .path {
+    width: 80px;
+    margin: 0 auto;
+    background: #c4a265;
+    min-height: 20px;
+    border-left: 4px solid #a0824d;
+    border-right: 4px solid #a0824d;
+  }
+
+  /* ========== MAIN LAYOUT ========== */
+  .farm-layout {
+    background: var(--green-mid);
+    padding: 20px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ========== SECTION TILES ========== */
+  .section-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(10px, 2vw, 14px);
+    color: var(--cream);
+    text-shadow: 2px 2px 0 var(--brown-dark);
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    background: var(--brown-mid);
+    border: 3px solid var(--brown-dark);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    display: inline-block;
+    letter-spacing: 1px;
+  }
+  .section-title .icon { margin-right: 10px; }
+
+  /* ========== ABOUT / PROFILE ========== */
+  .about-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .sprite-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .character-sprite {
+    width: 96px;
+    height: 96px;
+    background: var(--cream-dark);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    display: grid;
+    grid-template-columns: repeat(6, 16px);
+    grid-template-rows: repeat(6, 16px);
+    overflow: hidden;
+    image-rendering: pixelated;
+    position: relative;
+    animation: spriteIdle 1.2s steps(1) infinite;
+  }
+
+  @keyframes spriteIdle {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-2px); }
+  }
+
+  /* Hand-drawn pixel character using CSS */
+  .sprite-pixel {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+  }
+
+  .character-frame {
+    width: 96px;
+    height: 96px;
+    background: var(--sky-light);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    position: relative;
+    overflow: hidden;
+    animation: spriteIdle 1.2s steps(1) infinite;
+  }
+
+  /* Pixel art character SVG */
+  .character-frame svg {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+  }
+
+  /* ========== PROFILE PHOTO SLOT ========== */
+  /*
+   * 📸 PROFILE PHOTO
+   * To add your photo, replace the <svg> inside .character-frame with:
+   *   <img src="your-photo.jpg" alt="Profile" style="width:100%;height:100%;object-fit:cover;">
+   *
+   * For a larger portrait, swap .character-frame dimensions (e.g. width/height: 140px)
+   * and remove the spriteIdle animation if you prefer it static.
+   */
+  .profile-photo-slot {
+    width: 96px;
+    height: 96px;
+    background: var(--sky-light);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-photo-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto; /* use 'pixelated' if you want that pixel-art look */
+  }
+
+  .stat-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--brown-dark);
+  }
+  .stat-label {
+    font-size: 13px;
+    width: 60px;
+    flex-shrink: 0;
+  }
+  .stat-bar-bg {
+    flex: 1;
+    height: 12px;
+    background: var(--cream-dark);
+    border: 2px solid var(--brown-dark);
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-bar-fill {
+    height: 100%;
+    background: var(--green-light);
+    transition: width 1.5s ease;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.4);
+  }
+  .stat-bar-fill.blue { background: var(--water); }
+  .stat-bar-fill.gold { background: var(--gold); }
+  .stat-bar-fill.red { background: #e74c3c; }
+  .stat-bar-fill.purple { background: var(--purple); }
+
+  .about-text {
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--brown-dark);
+  }
+  .about-text p { margin-bottom: 10px; }
+  .heart { color: var(--red); }
+  .sparkle { color: var(--gold); }
+
+  /* ========== SKILLS - ITEM SLOTS ========== */
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  .item-slot {
+    background: var(--cream-dark);
+    border: 3px solid var(--brown-mid);
+    box-shadow: 3px 3px 0 var(--brown-dark), inset 1px 1px 0 rgba(255,255,255,0.5);
+    padding: 12px 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .item-slot:hover {
+    transform: translateY(-3px);
+    box-shadow: 3px 6px 0 var(--brown-dark), inset 1px 1px 0 rgba(255,255,255,0.5);
+    background: #fffde0;
+  }
+  .item-slot:active { transform: translateY(0); }
+
+  .item-icon {
+    font-size: 32px;
+    line-height: 1;
+    image-rendering: pixelated;
+  }
+
+  .item-name {
+    font-size: 14px;
+    color: var(--brown-dark);
+    line-height: 1.2;
+  }
+
+  .item-level {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 12px;
+    color: var(--gold-dark);
+  }
+
+  /* Rarity border colors */
+  .item-slot.common { border-color: var(--brown-mid); }
+  .item-slot.uncommon { border-color: var(--green-mid); }
+  .item-slot.rare { border-color: var(--water); }
+  .item-slot.epic { border-color: var(--purple); }
+  .item-slot.legendary { border-color: var(--gold); box-shadow: 3px 3px 0 var(--gold-dark), 0 0 8px rgba(247,201,72,0.4); }
+
+  /* ========== PROJECTS - CROP PLOTS ========== */
+  .crop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .crop-plot {
+    background: #8B6914;
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 var(--brown-dark);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .crop-plot:hover { transform: translateY(-4px); }
+
+  .plot-dirt {
+    background: #7a5c12;
+    padding: 3px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    min-height: 60px;
+  }
+
+  /*
+   * 🖼️ PROJECT SCREENSHOT SLOT
+   * Each .crop-plot can show a screenshot instead of (or alongside) the emoji dirt tiles.
+   * To add a screenshot, replace the <div class="plot-dirt">...</div> block with:
+   *
+   *   <div class="plot-screenshot">
+   *     <img src="your-screenshot.png" alt="Project name">
+   *   </div>
+   *
+   * The .plot-screenshot class below handles sizing & the pixel border style.
+   */
+  .plot-screenshot {
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid var(--brown-dark);
+  }
+  .plot-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    image-rendering: auto;
+  }
+  .crop-plot:hover .plot-screenshot img {
+    transform: scale(1.05);
+  }
+  /* Optional pixel overlay on top of screenshot for that retro feel */
+  .plot-screenshot::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.03) 0px,
+      rgba(0,0,0,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+  }
+
+  .dirt-tile {
+    background: #6b500f;
+    min-height: 16px;
+    position: relative;
+  }
+  .dirt-tile::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 3px; height: 2px;
+    background: rgba(0,0,0,0.2);
+  }
+
+  .crop-icon {
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: cropSway 2s ease-in-out infinite;
+    animation-delay: var(--delay, 0s);
+  }
+
+  @keyframes cropSway {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-5deg); }
+    50% { transform: translate(-50%, -50%) rotate(5deg); }
+  }
+
+  .plot-info {
+    background: var(--cream);
+    padding: 12px;
+    border-top: 3px solid var(--brown-dark);
+  }
+
+  .plot-title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: var(--brown-dark);
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+
+  .plot-desc {
+    font-size: 16px;
+    color: #5a3a10;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .plot-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .tag {
+    font-size: 13px;
+    padding: 2px 8px;
+    background: var(--green-dark);
+    color: var(--cream);
+    border: 2px solid var(--green-mid);
+  }
+
+  /* ========== EXPERIENCE - JOURNAL ========== */
+  .journal-entries {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .journal-entry {
+    background: var(--cream);
+    border: 3px solid var(--brown-mid);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    padding: 16px;
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .journal-entry::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 8px;
+    background: var(--brown-light);
+    border-right: 3px solid var(--brown-mid);
+  }
+
+  .journal-entry::after {
+    content: attr(data-season);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 13px;
+    color: var(--green-dark);
+    font-style: italic;
+  }
+
+  .journal-company {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: var(--brown-dark);
+    margin-bottom: 4px;
+  }
+
+  .journal-role {
+    font-size: 20px;
+    color: var(--brown-mid);
+    margin-bottom: 6px;
+  }
+
+  .journal-bullets {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    color: #5a3a10;
+    line-height: 1.6;
+  }
+  .journal-bullets li::before { content: '➤ '; color: var(--green-dark); }
+
+  /* ========== CONTACT - MAIL BOX ========== */
+  .mailbox-section {
+    text-align: center;
+  }
+
+  .mailbox-visual {
+    display: inline-block;
+    margin-bottom: 20px;
+    animation: spriteIdle 2s ease-in-out infinite;
+  }
+
+  .mailbox-body {
+    width: 80px;
+    height: 60px;
+    background: #e74c3c;
+    border: 4px solid var(--brown-dark);
+    box-shadow: 3px 3px 0 var(--brown-dark);
+    margin: 0 auto;
+    position: relative;
+  }
+  .mailbox-body::before {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: -4px; right: -4px;
+    height: 12px;
+    background: var(--brown-mid);
+    border: 4px solid var(--brown-dark);
+    border-top: none;
+  }
+  .mailbox-flag {
+    position: absolute;
+    right: -14px;
+    top: 8px;
+    width: 8px;
+    height: 20px;
+    background: var(--brown-mid);
+    border: 2px solid var(--brown-dark);
+  }
+  .mailbox-flag::before {
+    content: '';
+    position: absolute;
+    top: 2px; right: -10px;
+    width: 10px;
+    height: 8px;
+    background: var(--gold);
+    border: 2px solid var(--gold-dark);
+  }
+  .mailbox-slot {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 36px;
+    height: 6px;
+    background: var(--brown-dark);
+  }
+
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--brown-light);
+    border: 3px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 var(--brown-dark);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+  }
+  .contact-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--brown-dark);
+    background: var(--brown-mid);
+  }
+  .contact-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 var(--brown-dark);
+  }
+  .contact-btn.green { background: var(--green-dark); border-color: #1a3a0a; }
+  .contact-btn.green:hover { background: var(--green-mid); }
+  .contact-btn.blue { background: #2563eb; border-color: #1e3a8a; }
+  .contact-btn.blue:hover { background: #3b82f6; }
+
+  /* ========== FOOTER ========== */
+  footer {
+    background: var(--brown-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    border-top: 4px solid var(--brown-mid);
+  }
+  footer .stars { color: var(--gold); letter-spacing: 4px; font-size: 22px; }
+
+  /* ========== DIALOG BOX (tooltip) ========== */
+  .dialog-box {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(120%);
+    background: var(--cream);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 var(--brown-dark), 8px 8px 0 rgba(0,0,0,0.3);
+    padding: 16px 24px;
+    max-width: 400px;
+    width: 90%;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: left;
+  }
+  .dialog-box.visible { transform: translateX(-50%) translateY(0); }
+  .dialog-box .dialog-name {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    color: var(--brown-mid);
+    margin-bottom: 8px;
+  }
+  .dialog-box .dialog-text { font-size: 18px; color: var(--brown-dark); }
+  .dialog-box .dialog-close {
+    position: absolute;
+    top: 8px; right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--brown-mid);
+  }
+  .dialog-arrow {
+    position: absolute;
+    bottom: 8px; right: 12px;
+    font-size: 16px;
+    color: var(--brown-mid);
+    animation: arrowBlink 1s steps(1) infinite;
+  }
+  @keyframes arrowBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* ========== SECTION WRAPPERS ========== */
+  .section-panel {
+    padding: 20px;
+  }
+  .section-panel.wood {
+    background: #c49040;
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  }
+  .section-panel.stone {
+    background: #a0a08c;
+    border: 4px solid #606050;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  }
+  .section-panel.dirt {
+    background: #8B6914;
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  }
+  .section-panel.grass {
+    background: var(--green-dark);
+    border: 4px solid #1a3a0a;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  }
+  .section-panel.night {
+    background: #1a2240;
+    border: 4px solid #0d1520;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.4);
+  }
+  .section-panel.night .about-text { color: var(--cream); }
+  .section-panel.night .section-title { background: #2d3a60; }
+
+  /* Inner panel */
+  .inner-panel {
+    background: var(--cream);
+    border: 3px solid var(--brown-dark);
+    padding: 16px;
+    box-shadow: inset 2px 2px 0 rgba(255,255,255,0.5), inset -2px -2px 0 rgba(0,0,0,0.1);
+  }
+
+  /* Decorative flowers/trees scattered on bg */
+  .deco {
+    position: absolute;
+    font-size: 20px;
+    pointer-events: none;
+    opacity: 0.7;
+    animation: decoSway 3s ease-in-out infinite;
+    animation-delay: var(--d, 0s);
+  }
+  @keyframes decoSway {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+
+  /* Seasons indicator */
+  .season-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    background: var(--green-dark);
+    border: 2px solid var(--green-mid);
+    color: var(--cream);
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  /* Sparkle animation on hover */
+  .item-slot:hover .item-icon {
+    animation: sparkleItem 0.4s steps(2) infinite;
+  }
+  @keyframes sparkleItem {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1); }
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .about-card { grid-template-columns: 1fr; }
+    .sprite-container { flex-direction: row; justify-content: center; }
+    .inventory-grid { grid-template-columns: repeat(3, 1fr); }
+    .crop-grid { grid-template-columns: 1fr; }
+    .sign-board h1 { font-size: 12px; }
+  }
+
+  /* ========== GALLERY SECTION ========== */
+  /*
+   * 🖼️ GALLERY / SCREENSHOTS SECTION
+   * This section is ready for you to drop images into.
+   * See the HTML below for where to place your <img> tags.
+   */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+
+  .gallery-frame {
+    background: var(--cream-dark);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 4px 4px 0 var(--brown-dark);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s;
+    position: relative;
+  }
+  .gallery-frame:hover { transform: translateY(-4px); }
+
+  .gallery-img-wrap {
+    width: 100%;
+    height: 160px;
+    background: #c8c0a8;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Placeholder shown when no image is set */
+  .gallery-img-wrap.empty::before {
+    content: attr(data-label);
+    font-size: 14px;
+    color: #8a7a5a;
+    text-align: center;
+    padding: 8px;
+    font-family: 'VT323', monospace;
+  }
+  .gallery-img-wrap.empty::after {
+    content: '🖼️';
+    font-size: 40px;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -70%);
+  }
+  .gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+    image-rendering: auto;
+  }
+  .gallery-frame:hover .gallery-img-wrap img { transform: scale(1.05); }
+
+  /* Scanline pixel overlay */
+  .gallery-img-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0,0,0,0.04) 0px,
+      rgba(0,0,0,0.04) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  .gallery-img-wrap.empty::after { z-index: 0; }
+
+  .gallery-caption {
+    padding: 8px 10px;
+    font-size: 17px;
+    color: var(--brown-dark);
+    border-top: 3px solid var(--brown-mid);
+    background: var(--cream);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox-inner {
+    background: var(--cream);
+    border: 4px solid var(--brown-dark);
+    box-shadow: 8px 8px 0 var(--brown-dark);
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+  }
+  .lightbox-inner img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    display: block;
+  }
+  .lightbox-caption {
+    padding: 10px 16px;
+    font-size: 20px;
+    color: var(--brown-dark);
+    border-top: 3px solid var(--brown-mid);
+    background: var(--cream-dark);
+  }
+  .lightbox-close {
+    position: absolute;
+    top: -16px; right: -16px;
+    width: 36px; height: 36px;
+    background: var(--red);
+    border: 3px solid var(--brown-dark);
+    color: white;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 3px 3px 0 var(--brown-dark);
+  }
+  .lightbox-close:hover { background: #a93226; }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="sun"></div>
+  <div class="cloud cloud-1"></div>
+  <div class="cloud cloud-2"></div>
+  <div class="cloud cloud-3"></div>
+
+  <div style="text-align:center; padding-top: 20px;">
+    <div class="hero-sign">
+      <div class="sign-board">
+        <h1>⚒ YOUR NAME ⚒<br><span style="font-size:0.65em; color: var(--gold);">Developer & Creator</span></h1>
+        <div class="subtitle">✦ Welcome to my Portfolio Farm ✦</div>
+      </div>
+      <div class="sign-post"></div>
+    </div>
+  </div>
+</header>
+
+<div class="grass-top"></div>
+<div class="path"></div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="farm-layout">
+
+  <!-- ABOUT -->
+  <div class="section-panel wood">
+    <div class="section-title"><span class="icon">🏠</span> Farmer's Profile</div>
+    <div class="inner-panel">
+      <div class="about-card">
+        <div class="sprite-container">
+          <!-- Pixel art character: long hair, dress, black glasses, white converses, no hat -->
+          <div class="character-frame">
+            <svg viewBox="0 0 16 20" xmlns="http://www.w3.org/2000/svg" style="image-rendering:pixelated; width:100%; height:100%;">
+              <!-- sky bg -->
+              <rect width="16" height="20" fill="#b8e4f7"/>
+
+              <!-- LONG HAIR back layer (behind body) -->
+              <rect x="4" y="2" width="1" height="12" fill="#2c1a0e"/>
+              <rect x="11" y="2" width="1" height="12" fill="#2c1a0e"/>
+              <rect x="4" y="12" width="1" height="3" fill="#3d2510"/>
+              <rect x="11" y="12" width="1" height="3" fill="#3d2510"/>
+
+              <!-- HEAD -->
+              <rect x="5" y="2" width="6" height="6" fill="#f5c18a"/>
+
+              <!-- HAIR top -->
+              <rect x="4" y="1" width="8" height="3" fill="#2c1a0e"/>
+              <rect x="5" y="0" width="6" height="2" fill="#2c1a0e"/>
+              <!-- side hair strands -->
+              <rect x="4" y="3" width="1" height="5" fill="#2c1a0e"/>
+              <rect x="11" y="3" width="1" height="5" fill="#2c1a0e"/>
+
+              <!-- EYES (dark, no glasses frames yet) -->
+              <rect x="6" y="4" width="1" height="1" fill="#1a1a1a"/>
+              <rect x="9" y="4" width="1" height="1" fill="#1a1a1a"/>
+
+              <!-- BLACK GLASSES frames -->
+              <rect x="5" y="3" width="3" height="2" fill="none" stroke="#111" stroke-width="0.4"/>
+              <rect x="8" y="3" width="3" height="2" fill="none" stroke="#111" stroke-width="0.4"/>
+              <!-- glasses bridge -->
+              <rect x="8" y="4" width="1" height="0" fill="none" stroke="#111" stroke-width="0.4"/>
+              <!-- glasses arms -->
+              <rect x="4" y="4" width="1" height="0" fill="none" stroke="#111" stroke-width="0.4"/>
+              <rect x="11" y="4" width="1" height="0" fill="none" stroke="#111" stroke-width="0.4"/>
+              <!-- solid lens tint -->
+              <rect x="6" y="3" width="2" height="2" fill="rgba(0,0,0,0.15)"/>
+              <rect x="9" y="3" width="2" height="2" fill="rgba(0,0,0,0.15)"/>
+              <!-- frame outline bold -->
+              <rect x="5" y="3" width="3" height="2" fill="none" stroke="#111" stroke-width="0.5"/>
+              <rect x="8" y="3" width="3" height="2" fill="none" stroke="#111" stroke-width="0.5"/>
+              <line x1="8" y1="4" x2="8.5" y2="4" stroke="#111" stroke-width="0.4"/>
+
+              <!-- MOUTH smile -->
+              <rect x="7" y="6" width="2" height="1" fill="#d4826a"/>
+              <rect x="7" y="7" width="1" height="0" fill="#d4826a"/>
+
+              <!-- DRESS body — lavender/purple -->
+              <rect x="5" y="8" width="6" height="6" fill="#c8a0e8"/>
+              <!-- dress skirt flare -->
+              <rect x="4" y="11" width="8" height="4" fill="#b880d8"/>
+              <rect x="3" y="13" width="10" height="2" fill="#a060c8"/>
+              <!-- dress collar/neckline -->
+              <rect x="6" y="8" width="4" height="1" fill="#d8b8f0"/>
+              <!-- dress belt detail -->
+              <rect x="5" y="11" width="6" height="1" fill="#8840a8"/>
+
+              <!-- ARMS (skin) -->
+              <rect x="3" y="8" width="2" height="4" fill="#f5c18a"/>
+              <rect x="11" y="8" width="2" height="4" fill="#f5c18a"/>
+
+              <!-- LONG HAIR over shoulders/arms -->
+              <rect x="4" y="8" width="1" height="6" fill="#2c1a0e"/>
+              <rect x="11" y="8" width="1" height="6" fill="#2c1a0e"/>
+
+              <!-- LEGS (skin) -->
+              <rect x="6" y="15" width="2" height="2" fill="#f5c18a"/>
+              <rect x="8" y="15" width="2" height="2" fill="#f5c18a"/>
+
+              <!-- WHITE CONVERSES (shoes) -->
+              <!-- left shoe -->
+              <rect x="5" y="17" width="3" height="2" fill="#f0f0f0"/>
+              <rect x="5" y="17" width="3" height="1" fill="#e0e0e0"/>
+              <rect x="5" y="18" width="3" height="1" fill="#cccccc"/>
+              <!-- converse toe cap -->
+              <rect x="5" y="17" width="1" height="2" fill="#e8e8e8"/>
+              <!-- converse sole line -->
+              <rect x="5" y="18" width="3" height="1" fill="#aaaaaa"/>
+              <!-- laces -->
+              <rect x="6" y="17" width="1" height="1" fill="#dddddd"/>
+
+              <!-- right shoe -->
+              <rect x="8" y="17" width="3" height="2" fill="#f0f0f0"/>
+              <rect x="8" y="17" width="3" height="1" fill="#e0e0e0"/>
+              <rect x="10" y="17" width="1" height="2" fill="#e8e8e8"/>
+              <rect x="8" y="18" width="3" height="1" fill="#aaaaaa"/>
+              <rect x="9" y="17" width="1" height="1" fill="#dddddd"/>
+
+              <!-- Ground shadow -->
+              <rect x="4" y="19" width="8" height="1" fill="rgba(0,0,0,0.15)"/>
+            </svg>
+          </div>
+
+          <div class="stat-bars">
+            <div class="stat-row">
+              <span class="stat-label">Energy</span>
+              <div class="stat-bar-bg"><div class="stat-bar-fill gold" style="width:90%"></div></div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Social</span>
+              <div class="stat-bar-bg"><div class="stat-bar-fill blue" style="width:75%"></div></div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Code</span>
+              <div class="stat-bar-bg"><div class="stat-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Design</span>
+              <div class="stat-bar-bg"><div class="stat-bar-fill purple" style="width:80%"></div></div>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">Coffee</span>
+              <div class="stat-bar-bg"><div class="stat-bar-fill red" style="width:100%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p>👋 Hey there, stranger! I moved out here to build something meaningful — <span class="sparkle">✨ with code!</span></p>
+          <p>I'm a passionate <strong>full-stack developer</strong> who loves crafting delightful user experiences, solving complex problems, and growing something from seed to harvest. <span class="heart">♥</span></p>
+          <p>When I'm not tending my digital crops, you'll find me exploring new technologies, contributing to open source, and brewing the perfect cup of coffee. ☕</p>
+          <p>🌱 Currently growing: <em>React, TypeScript, Rust</em></p>
+          <p>📍 Based in: <em>Pelican Town (aka San Francisco)</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS / INVENTORY -->
+  <div class="section-panel grass">
+    <div class="section-title"><span class="icon">🎒</span> Inventory / Skills</div>
+    <div class="season-badge">🌻 Level 12 Developer — Year 3, Summer</div>
+    <div class="inventory-grid">
+      <div class="item-slot legendary" onclick="showDialog('JavaScript', 'A legendary crop that powers the entire valley. Handle with care — it bites! ⚡')">
+        <div class="item-icon">⚡</div>
+        <div class="item-name">JavaScript</div>
+        <div class="item-level">★★★★★</div>
+      </div>
+      <div class="item-slot rare" onclick="showDialog('React', 'A rare flowering plant. When in bloom, creates beautiful interactive UI meadows. 🌸')">
+        <div class="item-icon">⚛️</div>
+        <div class="item-name">React</div>
+        <div class="item-level">★★★★☆</div>
+      </div>
+      <div class="item-slot epic" onclick="showDialog('TypeScript', 'An epic enchantment that adds type safety to your code harvest. Very magical. 🔮')">
+        <div class="item-icon">📘</div>
+        <div class="item-name">TypeScript</div>
+        <div class="item-level">★★★★☆</div>
+      </div>
+      <div class="item-slot uncommon" onclick="showDialog('Node.js', 'An uncommon back-end sapling. Grows quickly and bears many fruits. 🌿')">
+        <div class="item-icon">🟢</div>
+        <div class="item-name">Node.js</div>
+        <div class="item-level">★★★☆☆</div>
+      </div>
+      <div class="item-slot rare" onclick="showDialog('Python', 'A rare snake plant. Known for its versatility in the data fields. 🐍')">
+        <div class="item-icon">🐍</div>
+        <div class="item-name">Python</div>
+        <div class="item-level">★★★★☆</div>
+      </div>
+      <div class="item-slot uncommon" onclick="showDialog('CSS', 'An uncommon paintbrush tool. Used to make the farm look absolutely stunning! 🎨')">
+        <div class="item-icon">🎨</div>
+        <div class="item-name">CSS / UI</div>
+        <div class="item-level">★★★★☆</div>
+      </div>
+      <div class="item-slot common" onclick="showDialog('SQL', 'A common but essential watering can. Without it, nothing grows in the database. 🗄️')">
+        <div class="item-icon">🗄️</div>
+        <div class="item-name">SQL</div>
+        <div class="item-level">★★★☆☆</div>
+      </div>
+      <div class="item-slot common" onclick="showDialog('Git', 'A trusty journal for tracking every seed you\'ve planted. Never lose your harvest! 📓')">
+        <div class="item-icon">📓</div>
+        <div class="item-name">Git</div>
+        <div class="item-level">★★★★☆</div>
+      </div>
+      <div class="item-slot rare" onclick="showDialog('Docker', 'A rare portable greenhouse. Your app grows the same wherever it\'s placed! 🐋')">
+        <div class="item-icon">🐋</div>
+        <div class="item-name">Docker</div>
+        <div class="item-level">★★★☆☆</div>
+      </div>
+    </div>
+    <p style="color: var(--cream-dark); font-size: 15px; margin-top: 12px; text-align: right;">💡 Click an item to inspect it!</p>
+  </div>
+
+  <!-- PROJECTS / CROPS -->
+  <div class="section-panel dirt">
+    <div class="section-title"><span class="icon">🌾</span> This Season's Harvest / Projects</div>
+    <div class="crop-grid">
+
+      <div class="crop-plot" onclick="showDialog('E-Commerce Platform', 'Grew from a single seed into a full-stack marketplace. This crop took 3 months to harvest but sells for 500g at Pierre\'s! 🏪')">
+        <div class="plot-dirt">
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0s">🛍️</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.3s">🛍️</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.6s">🛍️</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+        </div>
+        <div class="plot-info">
+          <div class="plot-title">E-Commerce Platform</div>
+          <div class="plot-desc">Full-stack marketplace with real-time inventory & payments.</div>
+          <div class="plot-tags">
+            <span class="tag">React</span>
+            <span class="tag">Node</span>
+            <span class="tag">Stripe</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="crop-plot" onclick="showDialog('AI Chat App', 'A mysterious crop that appeared during the Night Market. It talks back! Willy was amazed. 🤖')">
+        <div class="plot-dirt">
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.2s">🤖</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.5s">🤖</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.8s">🤖</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+        </div>
+        <div class="plot-info">
+          <div class="plot-title">AI Chat Application</div>
+          <div class="plot-desc">Conversational AI assistant with memory & streaming.</div>
+          <div class="plot-tags">
+            <span class="tag">Python</span>
+            <span class="tag">LLM</span>
+            <span class="tag">WebSockets</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="crop-plot" onclick="showDialog('Data Dashboard', 'A golden parsnip of a project — rare and valuable. Robin offered to hang it on the community board! 📊')">
+        <div class="plot-dirt">
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.1s">📊</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.4s">📊</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.7s">📊</span></div>
+        </div>
+        <div class="plot-info">
+          <div class="plot-title">Analytics Dashboard</div>
+          <div class="plot-desc">Real-time data visualization with drill-down reports.</div>
+          <div class="plot-tags">
+            <span class="tag">D3.js</span>
+            <span class="tag">SQL</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="crop-plot" onclick="showDialog('Mobile App', 'Planted in spring, ready by fall. The Junimos helped water it every night! 📱')">
+        <div class="plot-dirt">
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.9s">📱</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.3s">📱</span></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile"></div>
+          <div class="dirt-tile" style="position:relative"><span class="crop-icon" style="--delay:0.6s">📱</span></div>
+          <div class="dirt-tile"></div>
+        </div>
+        <div class="plot-info">
+          <div class="plot-title">Cross-Platform App</div>
+          <div class="plot-desc">Mobile-first fitness tracker with offline sync & notifications.</div>
+          <div class="plot-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <p style="color: var(--cream-dark); font-size: 15px; margin-top: 12px; text-align: right;">🌱 Click a plot to inspect the crop!</p>
+  </div>
+
+  <!-- EXPERIENCE / JOURNAL -->
+  <div class="section-panel stone">
+    <div class="section-title" style="background: #505040; border-color: #303030;"><span class="icon">📖</span> Adventurer's Journal</div>
+    <div class="journal-entries">
+
+      <div class="journal-entry" data-season="☀️ Summer Y3 — Present">
+        <div class="journal-company">Senior Software Engineer</div>
+        <div class="journal-role">⚒ Tech Startup Inc. · Remote</div>
+        <ul class="journal-bullets">
+          <li>Led rebuild of core platform serving 500k+ daily users</li>
+          <li>Cut page load times by 60% — Mayor Lewis was impressed</li>
+          <li>Mentored 4 junior developers through their first harvests</li>
+        </ul>
+      </div>
+
+      <div class="journal-entry" data-season="🍂 Fall Y1–Y3">
+        <div class="journal-company">Software Developer</div>
+        <div class="journal-role">🏛️ Big Corp Agency · San Francisco</div>
+        <ul class="journal-bullets">
+          <li>Shipped 12 client projects across retail, fintech & health sectors</li>
+          <li>Built a design system used by 6 product teams</li>
+          <li>Helped set up the Community Center... I mean, CI/CD pipeline</li>
+        </ul>
+      </div>
+
+      <div class="journal-entry" data-season="🌸 Spring Y1">
+        <div class="journal-company">Junior Developer</div>
+        <div class="journal-role">🌱 First Startup · New York</div>
+        <ul class="journal-bullets">
+          <li>Developed features for SaaS product — watered daily</li>
+          <li>Learned the craft from scratch, like my grandfather taught me</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GALLERY / SCREENSHOTS -->
+  <!--
+    ╔══════════════════════════════════════════════════════════╗
+    ║  🖼️  HOW TO ADD IMAGES TO THIS SECTION                   ║
+    ║                                                          ║
+    ║  1. Replace the data-label text with your caption.       ║
+    ║  2. Add an <img> tag inside .gallery-img-wrap:           ║
+    ║     <img src="your-image.jpg" alt="Description">         ║
+    ║  3. Remove the "empty" class from .gallery-img-wrap      ║
+    ║     once you add an image.                               ║
+    ║  4. Click any image to open it in the lightbox.          ║
+    ╚══════════════════════════════════════════════════════════╝
+  -->
+  <div class="section-panel wood">
+    <div class="section-title"><span class="icon">🖼️</span> Photo Album / Gallery</div>
+    <div class="gallery-grid">
+
+      <!-- GALLERY ITEM 1 — replace src with your image path -->
+      <div class="gallery-frame" onclick="openLightbox(this)">
+        <div class="gallery-img-wrap empty" data-label="Add your image here">
+          <!-- ✏️ TO ADD IMAGE: remove class "empty", add: <img src="photo1.jpg" alt="Caption"> -->
+        </div>
+        <div class="gallery-caption">✏️ Your Caption Here</div>
+      </div>
+
+      <!-- GALLERY ITEM 2 -->
+      <div class="gallery-frame" onclick="openLightbox(this)">
+        <div class="gallery-img-wrap empty" data-label="Add your image here">
+          <!-- ✏️ TO ADD IMAGE: remove class "empty", add: <img src="photo2.jpg" alt="Caption"> -->
+        </div>
+        <div class="gallery-caption">✏️ Your Caption Here</div>
+      </div>
+
+      <!-- GALLERY ITEM 3 -->
+      <div class="gallery-frame" onclick="openLightbox(this)">
+        <div class="gallery-img-wrap empty" data-label="Add your image here">
+          <!-- ✏️ TO ADD IMAGE: remove class "empty", add: <img src="photo3.jpg" alt="Caption"> -->
+        </div>
+        <div class="gallery-caption">✏️ Your Caption Here</div>
+      </div>
+
+      <!-- GALLERY ITEM 4 -->
+      <div class="gallery-frame" onclick="openLightbox(this)">
+        <div class="gallery-img-wrap empty" data-label="Add your image here">
+          <!-- ✏️ TO ADD IMAGE: remove class "empty", add: <img src="photo4.jpg" alt="Caption"> -->
+        </div>
+        <div class="gallery-caption">✏️ Your Caption Here</div>
+      </div>
+
+      <!-- ➕ DUPLICATE A BLOCK ABOVE TO ADD MORE GALLERY ITEMS -->
+
+    </div>
+    <p style="color: var(--brown-dark); font-size: 15px; margin-top: 12px; text-align: right;">💡 Click any image to view it full size!</p>
+  </div>
+
+  <!-- CONTACT / MAILBOX -->
+  <div class="section-panel night">
+    <div class="section-title"><span class="icon">✉️</span> Send a Letter</div>
+    <div class="mailbox-section">
+      <div class="mailbox-visual">
+        <div class="mailbox-body">
+          <div class="mailbox-slot"></div>
+          <div class="mailbox-flag"></div>
+        </div>
+      </div>
+      <p style="color: var(--cream); font-size: 22px; margin-bottom: 20px;">
+        ✨ You've got mail! Drop a letter in my mailbox — I reply within 1–2 game days. ✨
+      </p>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#d1b9b4bdbdbe91a8bea4a3bfb0bcb4ffb2bebc" class="contact-btn">
+          📬 Email Me
+        </a>
+        <a href="https://github.com/" target="_blank" class="contact-btn green">
+          🐙 GitHub
+        </a>
+        <a href="https://linkedin.com/" target="_blank" class="contact-btn blue">
+          💼 LinkedIn
+        </a>
+        <a href="#" class="contact-btn" style="background: #7c3aed; border-color: #4c1d95;">
+          🐦 Twitter
+        </a>
+      </div>
+      <p style="color: #7a8cb0; font-size: 16px; margin-top: 20px;">💌 Available for freelance & full-time opportunities!</p>
+    </div>
+  </div>
+
+</div><!-- end farm-layout -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="stars">★ ★ ★ ★ ★</div>
+  <p style="margin-top: 8px;">Made with ♥ & too much coffee · © 2025 Your Name · Built with HTML, CSS & Stardew Vibes</p>
+  <p style="font-size: 15px; margin-top: 6px; color: #a0926a;">"It's a beautiful day on the farm!"</p>
+</footer>
+
+<!-- ===== LIGHTBOX ===== -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- ===== DIALOG BOX ===== -->
+<div class="dialog-box" id="dialogBox">
+  <span class="dialog-close" onclick="hideDialog()">✕</span>
+  <div class="dialog-name" id="dialogName"></div>
+  <div class="dialog-text" id="dialogText"></div>
+  <div class="dialog-arrow">▼</div>
+</div>
+
+<script>
+  let dialogTimer;
+
+  function showDialog(name, text) {
+    const box = document.getElementById('dialogBox');
+    document.getElementById('dialogName').textContent = '⚒ ' + name;
+    document.getElementById('dialogText').textContent = text;
+    box.classList.add('visible');
+    clearTimeout(dialogTimer);
+    dialogTimer = setTimeout(hideDialog, 5000);
+  }
+
+  function hideDialog() {
+    document.getElementById('dialogBox').classList.remove('visible');
+  }
+
+  // ── LIGHTBOX ─────────────────────────────────────────────
+  // Opens when a gallery frame is clicked.
+  // If the frame has no <img> (still a placeholder), shows a hint instead.
+  function openLightbox(frameEl) {
+    const img = frameEl.querySelector('.gallery-img-wrap img');
+    const caption = frameEl.querySelector('.gallery-caption').textContent.trim();
+    if (!img) {
+      showDialog('Gallery', '✏️ No image yet! Add an <img> tag inside this .gallery-img-wrap to display it here.');
+      return;
+    }
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.alt || caption;
+    document.getElementById('lightboxCaption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeLightboxOnBg(e) {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+  // ─────────────────────────────────────────────────────────
+
+  // Animate stat bars on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const fills = document.querySelectorAll('.stat-bar-fill');
+    fills.forEach(f => {
+      const w = f.style.width;
+      f.style.width = '0%';
+      setTimeout(() => { f.style.width = w; }, 300);
+    });
+  });
+
+  // Easter egg: Konami code shows a secret message
+  const konamiCode = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+  let konamiIdx = 0;
+  document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[konamiIdx]) {
+      konamiIdx++;
+      if (konamiIdx === konamiCode.length) {
+        showDialog('???', '✨ You found the secret passage! The Wizard sends his regards.
+        showDialog('???', '✨ You found the secret passage! The Wizard sends his regards. +500g has been added to your account. ✨');
+        konamiIdx = 0;
+      }
+    } else {
+      konamiIdx = 0;
+    }
+  });
+</script>
+
+<!-- ===== ANIMAL COMPANION SYSTEM ===== -->
+<style>
+  #companion-canvas { position: fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:99998; }
+  #companion-particle { position: fixed; top:0; left:0; width:100vw; height:100vh; pointer-events:none; z-index:99997; }
+  #companion-hud {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+    background: #3d1c02; border: 3px solid #7a3f10;
+    box-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+    padding: 7px 16px; font-family: 'Press Start 2P', monospace; font-size: 9px;
+    color: #f5e6c8; pointer-events: none; z-index: 100000;
+    display: flex; align-items: center; gap: 12px; white-space: nowrap;
+  }
+  #chud-bar-bg { width:110px; height:10px; background:#1a0a00; border:2px solid #7a3f10; position:relative; overflow:hidden; display:inline-block; vertical-align:middle; }
+  #chud-bar { height:100%; background:#f7c948; width:0%; transition:width 0.3s; }
+  #chud-animal { color:#f7c948; }
+  #chud-pts { color:#7ec850; }
+  #companion-notify {
+    position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-90px);
+    background: #3d1c02; border: 3px solid #f7c948;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.5); padding: 10px 20px;
+    font-family: 'Press Start 2P', monospace; font-size: 10px; color: #f7c948;
+    z-index: 100001; pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    text-align: center; white-space: nowrap;
+  }
+  #companion-notify.show { transform: translateX(-50%) translateY(0); }
+</style>
+
+<canvas id="companion-canvas"></canvas>
+<canvas id="companion-particle"></canvas>
+<div id="companion-hud">
+  <span id="chud-animal">COW</span>
+  <div id="chud-bar-bg"><div id="chud-bar"></div></div>
+  <span id="chud-pts">0 pts</span>
+</div>
+<div id="companion-notify"></div>
+
+<script>
+(function(){
+  const canvas = document.getElementById('companion-canvas');
+  const pCanvas = document.getElementById('companion-particle');
+  const ctx = canvas.getContext('2d');
+  const pCtx = pCanvas.getContext('2d');
+
+  function resize() { canvas.width = pCanvas.width = window.innerWidth; canvas.height = pCanvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+
+  const TIERS = [
+    { name:'COW',    pts:0,    next:30   },
+    { name:'PIG',    pts:30,   next:80   },
+    { name:'SHEEP',  pts:80,   next:160  },
+    { name:'GOAT',   pts:160,  next:280  },
+    { name:'DUCK',   pts:280,  next:450  },
+    { name:'RABBIT', pts:450,  next:680  },
+    { name:'CAT',    pts:680,  next:980  },
+    { name:'DOG',    pts:980,  next:1400 },
+    { name:'HORSE',  pts:1400, next:2000 },
+    { name:'DRAGON', pts:2000, next:99999},
+  ];
+
+  let points=0, tier=0;
+  let mx=window.innerWidth/2, my=window.innerHeight/2;
+  let ax=mx, ay=my, vx=0, vy=0;
+  let facingRight=true, bobT=0;
+  let particles=[], collectibles=[], lastSpawn=0, notifyTimer=null;
+
+  window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; });
+
+  function spawnCollectible() {
+    const m=60, types=['star','coin','heart','gem'];
+    collectibles.push({ x:m+Math.random()*(canvas.width-m*2), y:m+Math.random()*(canvas.height-m*2),
+      type:types[Math.floor(Math.random()*types.length)], t:0, collected:false, scale:1 });
+  }
+
+  function showNotify(msg) {
+    const el=document.getElementById('companion-notify');
+    el.textContent=msg; el.classList.add('show');
+    if(notifyTimer) clearTimeout(notifyTimer);
+    notifyTimer=setTimeout(()=>el.classList.remove('show'),2400);
+  }
+
+  function updateHUD() {
+    const t=TIERS[tier];
+    const frac=Math.min(1,(points-t.pts)/(t.next-t.pts));
+    document.getElementById('chud-bar').style.width=(frac*100)+'%';
+    document.getElementById('chud-animal').textContent=t.name;
+    document.getElementById('chud-pts').textContent=points+' pts';
+  }
+
+  function checkTier() {
+    let nT=0;
+    for(let i=TIERS.length-1;i>=0;i--) { if(points>=TIERS[i].pts){nT=i;break;} }
+    if(nT!==tier) {
+      tier=nT;
+      const msgs=['','OINK! A pig arrived!','A fluffy sheep!','Headbutt! A goat!','Quack! A duck!',
+        'Hop! A rabbit!','Meow! A cat!','Woof! A dog!','NEIGH! A horse!','🐉 A DRAGON AWAKENS!!'];
+      if(msgs[tier]) showNotify(msgs[tier]);
+      for(let i=0;i<20;i++) spawnParticle(ax,ay,true);
+    }
+  }
+
+  function spawnParticle(x,y,burst=false) {
+    const angle=Math.random()*Math.PI*2, speed=burst?2+Math.random()*4:1+Math.random()*2;
+    const cols=['#f7c948','#7ec850','#ff8fa0','#87ceeb','#e8b4ff'];
+    particles.push({ x,y, vx:Math.cos(angle)*speed, vy:Math.sin(angle)*speed-(burst?1:0),
+      life:1, decay:0.02+Math.random()*0.02, r:burst?4+Math.random()*4:3+Math.random()*3,
+      color:cols[Math.floor(Math.random()*cols.length)], square:Math.random()>0.5 });
+  }
+
+  function drawCollectible(c) {
+    pCtx.save(); pCtx.translate(c.x, c.y+Math.sin(c.t*0.05)*4); pCtx.scale(c.scale,c.scale);
+    if(c.type==='star') {
+      pCtx.fillStyle='#f7c948'; pCtx.strokeStyle='#c4922a'; pCtx.lineWidth=2;
+      pCtx.beginPath();
+      for(let i=0;i<10;i++) { const r=i%2===0?10:5,a=(i/10)*Math.PI*2-Math.PI/2; pCtx[i===0?'moveTo':'lineTo'](Math.cos(a)*r,Math.sin(a)*r); }
+      pCtx.closePath(); pCtx.fill(); pCtx.stroke();
+    } else if(c.type==='coin') {
+      pCtx.fillStyle='#f7c948'; pCtx.strokeStyle='#c4922a'; pCtx.lineWidth=2;
+      pCtx.beginPath(); pCtx.arc(0,0,9,0,Math.PI*2); pCtx.fill(); pCtx.stroke();
+      pCtx.fillStyle='#c4922a'; pCtx.font='bold 10px monospace'; pCtx.textAlign='center'; pCtx.textBaseline='middle'; pCtx.fillText('G',0,0);
+    } else if(c.type==='heart') {
+      pCtx.fillStyle='#e74c3c'; pCtx.strokeStyle='#8b1a1a'; pCtx.lineWidth=1.5;
+      pCtx.beginPath(); pCtx.moveTo(0,-3); pCtx.bezierCurveTo(0,-8,-9,-8,-9,-3);
+      pCtx.bezierCurveTo(-9,2,0,8,0,10); pCtx.bezierCurveTo(0,8,9,2,9,-3);
+      pCtx.bezierCurveTo(9,-8,0,-8,0,-3); pCtx.closePath(); pCtx.fill(); pCtx.stroke();
+    } else {
+      pCtx.fillStyle='#b080f0'; pCtx.strokeStyle='#6030b0'; pCtx.lineWidth=1.5;
+      pCtx.beginPath(); pCtx.moveTo(0,-10); pCtx.lineTo(8,-3); pCtx.lineTo(8,4);
+      pCtx.lineTo(0,10); pCtx.lineTo(-8,4); pCtx.lineTo(-8,-3); pCtx.closePath(); pCtx.fill(); pCtx.stroke();
+    }
+    pCtx.restore();
+  }
+
+  function px(x,y,w,h,color) { ctx.fillStyle=color; ctx.fillRect(x*4,y*4,(w||1)*4,(h||1)*4); }
+
+  function drawAnimal(x,y) {
+    const sizes=[28,26,26,24,20,18,20,22,32,36];
+    const s=sizes[tier]/28;
+    ctx.save(); ctx.translate(x, y+Math.sin(bobT*0.08)*2.5);
+    if(!facingRight) ctx.scale(-1,1); ctx.scale(s,s);
+    ctx.imageSmoothingEnabled=false;
+    const drawFns=[drawCow,drawPig,drawSheep,drawGoat,drawDuck,drawRabbit,drawCat,drawDog,drawHorse,drawDragon];
+    drawFns[tier]();
+    ctx.restore();
+  }
+
+  function drawCow() {
+    px(-4,-6,8,6,'#f5f5f0'); px(-5,-5,1,4,'#888'); px(4,-5,1,4,'#888');
+    px(-3,-9,2,3,'#e0e0e0'); px(1,-9,2,3,'#e0e0e0');
+    px(-2,-7,1,1,'#ffaaaa'); px(1,-7,1,1,'#ffaaaa');
+    px(-1,-5,2,1,'#333'); px(-1,-4,2,1,'#333');
+    px(-4,0,8,4,'#f5f5f0'); px(-4,4,2,4,'#ccc'); px(-2,4,2,4,'#f5f5f0');
+    px(0,4,2,4,'#ccc'); px(2,4,2,4,'#f5f5f0'); px(2,-3,3,3,'#e08888');
+  }
+  function drawPig() {
+    const c='#f9b8c0',a='#d47a8a';
+    px(-4,-5,8,6,c); px(-5,-4,1,3,c); px(4,-4,1,3,c);
+    px(-2,-8,2,3,c); px(1,-8,2,3,c); px(-2,-6,4,2,a);
+    px(-2,-4,1,1,'#333'); px(1,-4,1,1,'#333');
+    px(-1,-3,3,2,'#f97090'); px(0,-2,1,1,'#333'); px(1,-2,1,1,'#333');
+    px(-4,1,8,4,c); px(-4,5,2,4,c); px(0,5,2,4,c);
+    ctx.fillStyle='#f97090'; ctx.beginPath(); ctx.arc(18,2,5,0,Math.PI*2); ctx.fill();
+  }
+  function drawSheep() {
+    const w='#e8e4e0',a='#a09080';
+    px(-5,-6,10,7,w); px(-6,-4,2,4,w); px(5,-4,2,4,w);
+    px(-3,-9,2,3,a); px(1,-9,2,3,a);
+    px(-2,-6,4,3,a); px(-2,-4,1,1,'#333'); px(1,-4,1,1,'#333');
+    px(-5,1,10,5,w); px(-4,6,2,4,a); px(-1,6,1,4,a); px(1,6,2,4,a);
+  }
+  function drawGoat() {
+    const c='#d4c89a',a='#8a7a3a';
+    px(-4,-5,8,5,c); px(-5,-4,1,3,c); px(4,-4,1,3,c);
+    px(-2,-9,1,5,a); px(1,-9,1,5,a);
+    px(-1,-6,3,2,c); px(-2,-4,1,1,'#333'); px(1,-4,1,1,'#333');
+    px(-4,0,8,4,c); px(-4,4,2,5,c); px(0,4,2,5,c);
+    px(0,-7,1,4,'#888'); px(-1,-6,1,1,'#888');
+  }
+  function drawDuck() {
+    px(-3,-8,6,5,'#ffe87a'); px(-4,-7,1,3,'#ffe87a'); px(3,-7,1,3,'#ffe87a');
+    px(-1,-4,3,2,'#ffe87a'); px(-1,-3,1,1,'#333');
+    px(2,-6,3,2,'#f97020'); px(2,-5,4,1,'#f97020');
+    px(-4,-1,7,5,'#ffe87a'); px(-3,4,2,3,'#f97020'); px(0,4,2,3,'#f97020');
+    px(3,-3,2,4,'#ffe87a');
+  }
+  function drawRabbit() {
+    const c='#f7e4d4';
+    px(-3,-10,1,6,c); px(2,-10,1,6,c);
+    px(-1,-8,1,4,'#ffaaaa'); px(1,-8,1,4,'#ffaaaa');
+    px(-3,-4,7,5,c); px(-4,-3,1,3,c); px(3,-3,1,3,c);
+    px(-2,-3,1,1,'#333'); px(1,-3,1,1,'#333');
+    px(-1,-2,3,2,'#ffb0c0'); px(-3,1,6,3,c); px(-3,4,2,4,c); px(0,4,2,4,c);
+    px(3,-1,2,2,c);
+  }
+  function drawCat() {
+    const c='#c4a07a',a='#7a5030';
+    px(-4,-6,8,5,c); px(-5,-5,1,3,c); px(4,-5,1,3,c);
+    px(-4,-9,2,3,c); px(2,-9,2,3,c);
+    px(-2,-5,1,2,'#f9d070'); px(1,-5,1,2,'#f9d070');
+    px(-2,-4,1,1,'#333'); px(1,-4,1,1,'#333');
+    px(-1,-3,3,2,'#f9aabb');
+    px(-4,0,7,4,c); px(-4,4,2,5,c); px(0,4,2,5,c);
+    px(3,-2,1,6,c); px(4,-1,1,4,c);
+  }
+  function drawDog() {
+    const c='#d4a060';
+    px(-4,-6,8,6,c); px(-5,-5,1,4,c); px(4,-5,1,4,c);
+    px(-4,-9,3,4,c); px(2,-7,3,5,c);
+    px(-2,-5,1,1,'#333'); px(1,-5,1,1,'#333');
+    px(-2,-4,5,2,'#c4905a');
+    px(-4,0,8,4,c); px(-5,1,1,3,c); px(4,1,1,3,c);
+    px(-4,4,2,4,c); px(1,4,2,4,c);
+    ctx.save(); ctx.translate(24,-8); ctx.rotate(0.5); ctx.fillStyle=c; ctx.fillRect(0,0,8,20); ctx.restore();
+  }
+  function drawHorse() {
+    const c='#c8b08a',a='#8a6030';
+    px(-5,-7,10,7,c); px(-6,-5,1,5,c); px(5,-5,1,5,c);
+    px(-1,-10,3,4,c);
+    for(let i=0;i<4;i++){ctx.fillStyle=a;ctx.fillRect((i-1)*4,-28,4,16);}
+    px(-2,-6,1,1,'#333'); px(1,-6,1,1,'#333');
+    px(-2,-5,4,3,c); px(2,-3,3,2,'#d4c0a0');
+    px(-6,0,12,5,c); px(-6,5,2,6,c); px(-3,5,2,5,c); px(1,5,2,6,c); px(3,5,2,5,c);
+    ctx.save(); ctx.translate(32,12); ctx.rotate(-0.3);
+    for(let i=0;i<5;i++){ctx.fillStyle=a;ctx.fillRect(0,i*6,4,4);} ctx.restore();
+  }
+  function drawDragon() {
+    const c='#70c0ff',a='#2060d0';
+    px(-5,-7,10,7,c); px(-6,-5,1,5,a); px(5,-5,1,5,a);
+    px(-3,-11,3,5,c); px(1,-11,3,5,c);
+    px(-2,-9,1,3,'#ff8020'); px(1,-9,1,3,'#ff8020');
+    px(-2,-7,1,1,'#ff3030'); px(1,-7,1,1,'#ff3030');
+    px(-2,-5,5,3,a); px(-2,-3,1,1,'#ff6060'); px(1,-3,1,1,'#ff6060');
+    px(-6,-2,16,6,c);
+    for(let i=-5;i<10;i+=3) px(i,-3,2,2,a);
+    px(-5,4,10,5,c); px(-5,9,2,6,a); px(-2,9,2,6,a); px(2,9,2,6,a); px(3,9,2,6,a);
+    ctx.fillStyle='rgba(0,150,255,0.4)'; ctx.beginPath(); ctx.ellipse(0,0,50,30,0.4,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='rgba(0,200,255,0.25)'; ctx.beginPath(); ctx.ellipse(-40,-10,30,20,-0.3,0,Math.PI*2); ctx.fill();
+    ctx.save(); ctx.translate(44,8); ctx.rotate(-0.5); ctx.fillStyle=a; ctx.fillRect(0,0,4,24);
+    ctx.fillStyle='#ff3030'; ctx.beginPath(); ctx.moveTo(0,24); ctx.lineTo(-8,36); ctx.lineTo(8,36); ctx.closePath(); ctx.fill(); ctx.restore();
+  }
+
+  function loop(ts) {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pCtx.clearRect(0,0,pCanvas.width,pCanvas.height);
+    bobT++;
+
+    const dx=mx-ax, dy=my-ay, dist=Math.sqrt(dx*dx+dy*dy);
+    const spd=0.06+tier*0.005;
+    if(dist>5){ vx+=dx*spd; vy+=dy*spd; }
+    vx*=0.82; vy*=0.82; ax+=vx; ay+=vy;
+    if(Math.abs(vx)>0.5) facingRight=vx>0;
+
+    if(ts-lastSpawn>1800 && collectibles.length<7){ spawnCollectible(); lastSpawn=ts; }
+
+    for(let i=collectibles.length-1;i>=0;i--) {
+      const c=collectibles[i]; c.t++;
+      if(!c.collected) {
+        const cdx=ax-c.x, cdy=ay-c.y;
+        if(Math.sqrt(cdx*cdx+cdy*cdy)<30) {
+          c.collected=true;
+          const vals={star:5,coin:2,heart:10,gem:15};
+          points+=vals[c.type]||2; checkTier(); updateHUD();
+          for(let j=0;j<8;j++) spawnParticle(c.x,c.y);
+        }
+      }
+      if(c.collected){ c.scale*=0.85; if(c.scale<0.05){collectibles.splice(i,1);continue;} }
+      drawCollectible(c);
+    }
+
+    for(let i=particles.length-1;i>=0;i--) {
+      const p=particles[i]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.1; p.life-=p.decay;
+      if(p.life<=0){particles.splice(i,1);continue;}
+      pCtx.save(); pCtx.globalAlpha=p.life; pCtx.fillStyle=p.color;
+      if(p.square) pCtx.fillRect(p.x-p.r/2,p.y-p.r/2,p.r,p.r);
+      else{pCtx.beginPath();pCtx.arc(p.x,p.y,p.r/2,0,Math.PI*2);pCtx.fill();}
+      pCtx.restore();
+    }
+
+    drawAnimal(ax,ay);
+    requestAnimationFrame(loop);
+  }
+
+  updateHUD();
+  requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
+
+  <script>
+    
+  </script>
+</body>
+</html>
